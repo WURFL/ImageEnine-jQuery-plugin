@@ -1,7 +1,7 @@
 # ImageEnine jQuery plugin
 
 A jQuery plugin is a plain JavaScript file that you must reference right after the jQuery file in your web views. Here’s how to use the plugin.
-First, download and include the [jquery.imageengine.js](https://github.com/WURFL/ImageEngine-jQuery-plugin/jquery.imageengine.js) in your markup.
+First, download and include the [jquery.imageengine.js](https://github.com/WURFL/ImageEngine-jQuery-plugin/blob/master/jquery.imageengine.js) in your markup.
 Then initialize the plugin with the options you need:
 ```
 <script type="text/javascript">
