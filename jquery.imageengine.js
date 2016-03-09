@@ -11,6 +11,7 @@ if (!jQuery)
     $.fn.imageEngine = function (options) {
 
         var settings = $.extend({
+            accountType: "lite",
             addBootstrapResponsive: true,
             debug: false,
             account: "",
@@ -23,7 +24,7 @@ if (!jQuery)
         }, options);
 
         this.filter("img").each(function () {
-            var computedUrl = "//wit.wurfl.io/";
+            var computedUrl = "//try.ite.imgeng.in/";
             var img = $(this);
             
             // =========================================================
@@ -39,7 +40,11 @@ if (!jQuery)
 
             // Fix account reference
             if (settings.account) {
-                computedUrl = "//" + settings.account + ".lite.imgeng.in/";
+                if (accountType === "lite") {
+                    computedUrl = "//" + settings.account + ".lite.imgeng.in/";
+                }else{
+                    computedUrl = "//" + settings.account + ".imgeng.in/";
+                }
             }
 
             // width-height || percentage

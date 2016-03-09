@@ -8,6 +8,7 @@ Then initialize the plugin with the options you need:
     $("img").imageEngine({
         debug: true,
         account: "your-account",
+        accountType: "lite",
         width: 400,
         height: 400,
         mode: "cropbox",
