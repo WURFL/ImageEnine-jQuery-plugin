@@ -11,20 +11,21 @@ if (!jQuery)
     $.fn.imageEngine = function (options) {
 
         var settings = $.extend({
-            accountType: "lite",
+            accountType: "normal",
             addBootstrapResponsive: true,
             debug: false,
             account: "",
             width: "",
             height: "",
             percentage: "",
+            compression: "",
             mode: "",
             transparencyColor: "",
             format:""
         }, options);
 
         this.filter("img").each(function () {
-            var computedUrl = "//try.ite.imgeng.in/";
+            var computedUrl = "//try.imgeng.in/";
             var img = $(this);
             
             // =========================================================
@@ -40,6 +41,7 @@ if (!jQuery)
 
             // Fix account reference
             if (settings.account) {
+                //Lite account is not recommended for new installations!
                 if (accountType === "lite") {
                     computedUrl = "//" + settings.account + ".lite.imgeng.in/";
                 }else{
@@ -73,6 +75,11 @@ if (!jQuery)
             // image format
             if (settings.format) {
                 computedUrl += "f_" + settings.format + "/";
+            }
+
+            // compression rate
+            if (settings.compression) {
+                computedUrl += "cmpr_" + settings.compression + "/";
             }
 
             // =========================================================
